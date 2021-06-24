@@ -13,6 +13,12 @@ h4,
 h5,
 h6 {
   margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
 }
 
 .container {
