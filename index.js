@@ -3,6 +3,7 @@ const repoList = document.querySelector('.repo-list');
 const reposContainer = document.querySelector('.repos');
 const repoInfo = document.querySelector('.repo-info');
 const backBtn = document.querySelector('.view-repos');
+const filterInput = document.querySelector('.filter-repos');
 
 const username = 'anacolell';
 
@@ -18,10 +19,12 @@ const fetchUsers = async () => {
 const displayUser = (userData) => {
   let userDiv = document.createElement('div');
   userDiv.innerHTML = `
-  <img src= ${userData.avatar_url}/>
-  <h3>Name: ${userData.name}</h3>
-  <h3>Location: ${userData.location}</h3>
-  <h3>Number of public repos: ${userData.public_repos}</h3>`;
+  <img class="avatar" src= ${userData.avatar_url}/>
+  <div>
+    <p>Name: ${userData.name}</p>
+    <p>Location: ${userData.location}</p>
+    <p>Number of public repos: ${userData.public_repos}</p>
+  </div>`;
   userDetails.append(userDiv);
 }
 
@@ -37,8 +40,10 @@ const fetchRepos = async () => {
 }
 
 const displayRepos = (reposData) => {
+  filterInput.classList.remove('hide');
   reposData.forEach((repo)=> {
     let reposLi = document.createElement('li');
+    reposLi.classList.add('repo');
     reposLi.innerHTML = `
     <h3>${repo.name}</h3>`;
     repoList.append(reposLi);
@@ -48,7 +53,7 @@ const displayRepos = (reposData) => {
 
 fetchRepos()
 
-/* fetch individual repos when click event */
+/* fetch individual repos when clicked */
 
 repoList.addEventListener('click', function(e) {
   if (e.target.matches("h3")){
@@ -58,26 +63,51 @@ repoList.addEventListener('click', function(e) {
 })
 
 const fetchRepo = async (repoName) => {
-  // console.log(repoName)
   const repoUrl = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
   const repoData = await repoUrl.json();
-  // console.log(repoData)
-  displayRepo(repoData)
+  const languagesUrl = await fetch(`https://api.github.com/repos/${username}/${repoName}/languages`);
+  const languagesData = await languagesUrl.json();
+  const languages = Object.keys(languagesData);
+  console.log(repoData)
+  displayRepo(repoData, languages)
 }
 
-const displayRepo = (repoData) => {
+const displayRepo = (repoData, languages) => {
   let repoDiv = document.createElement('div');
-  repoDiv.innerHTML = "";
-  repoDiv.innerHTML = `<p>${repoData.name}<p>`;
+  repoInfo.innerHTML = "";
+  repoDiv.innerHTML = `
+  <p>${repoData.name}<p>
+  <p>${repoData.description}<p>
+  <p>${languages.join(', ')}`;
   repoInfo.append(repoDiv);
   reposContainer.classList.add('hide');
   repoInfo.classList.remove('hide');
-  backBtn.classList.remove('hide');
+  backBtn.classList.remove('hide')
+  filterInput.classList.add('hide');
 }
+
+/* hide button when going back to repo list */
 
 backBtn.addEventListener('click', (e)=> {
   reposContainer.classList.remove('hide');
   repoInfo.classList.add('hide');
   backBtn.classList.add('hide');
+  filterInput.classList.remove('hide')
+})
+
+/* search function */
+
+filterInput.addEventListener('input', (e) => {
+  let value = e.target.value;
+  let valueLowerCase = e.target.value.toLowerCase();
+  let repos = document.querySelectorAll('.repo')
+  repos.forEach((repo)=>{
+    let repoTitle = repo.innerText.toLowerCase();
+    if (repoTitle.includes(valueLowerCase)){
+      repo.classList.remove('hide');
+    } else {
+      repo.classList.add('hide');
+    }
+  })
 })
 
