@@ -20,10 +20,10 @@ const displayUser = (userData) => {
   let userDiv = document.createElement('div');
   userDiv.innerHTML = `
   <img class="avatar" src= ${userData.avatar_url}/>
-  <div>
-    <p>Name: ${userData.name}</p>
-    <p>Location: ${userData.location}</p>
-    <p>Number of public repos: ${userData.public_repos}</p>
+  <div class="user-data">
+    <p><strong>Name:</strong> ${userData.name}</p>
+    <p><strong>Location:</strong> ${userData.location}</p>
+    <p><strong>Number of public repos:</strong> ${userData.public_repos}</p>
   </div>`;
   userDetails.append(userDiv);
 }
@@ -45,7 +45,8 @@ const displayRepos = (reposData) => {
     let reposLi = document.createElement('li');
     reposLi.classList.add('repo');
     reposLi.innerHTML = `
-    <h3>${repo.name}</h3>`;
+    <h3>${repo.name}</h3>
+    `;
     repoList.append(reposLi);
     reposLi.classList.add('repo');
   })

@@ -11,20 +11,33 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
 }
 
-h1 {
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-}
-
 .container {
-  width: 80%;
   margin: 0 auto;
   background-color: pink;
+  width: 80%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  background-color: navy;
+  color: #fff;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.fa-github {
+  font-size: 40px;
 }
 
 .avatar {
@@ -36,10 +49,69 @@ h1 {
   display: none;
 }
 
-.title {
-  text-align: center;
-  font-size: 40px;
-  margin: 20px 0;
-  padding:20px 0;
+.user-info {
+  padding-bottom: 80px;
+  background-color: navy;
 }
 
+.user-details > div {
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  color: #fff;
+}
+
+.user-data {
+  display:flex;
+  flex-direction: column;
+}
+
+.user-data p {
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.repo {
+  list-style: none;
+  border: 1px solid black;
+  padding: 15px 25px;
+}
+
+.repos {
+  text-align:center;
+}
+
+.filter-repos {
+  margin: 30px 0;
+  padding: 15px 25px;
+}
+
+.repo-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 40px;
+  padding:0;
+  margin: 0 20px;
+}
+
+/* media queries */
+@media (min-width:700px) {
+    /*Tablet and Desktop styles here*/
+  .repo-list {
+  grid-template-columns: 1fr 1fr;
+
+ }
+ .user-details > div {
+  flex-direction: row;
+  align-items:center;
+}
+}
+
+@media (min-width:980px) {
+    /*Tablet and Desktop styles here*/
+  .repo-list {
+  grid-template-columns: 1fr 1fr 1fr;
+
+ }
+}
