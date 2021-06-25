@@ -17,32 +17,41 @@ p {
   font-family: 'Quicksand', sans-serif;
 }
 
+body {
+  background-color: #EDEEF0;
+}
+
 .container {
   margin: 0 auto;
-  background-color: pink;
-  width: 80%;
+  background-color: #fff;
+  width: 90%;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-bottom:40px;
 }
 
 .title {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
-  background-color: navy;
+  background-color: #3E84C0;
   color: #fff;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
+  padding: 40px 0;
 }
 
 .fa-github {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .avatar {
   width: 200px;
   border-radius: 50%;
+  padding: 30px 0;
 }
 
 .hide {
@@ -50,8 +59,8 @@ p {
 }
 
 .user-info {
-  padding-bottom: 80px;
-  background-color: navy;
+  padding-bottom: 30px;
+  background-color: #3E84C0;
 }
 
 .user-details > div {
@@ -65,17 +74,33 @@ p {
 .user-data {
   display:flex;
   flex-direction: column;
+  width: 80%;
 }
 
 .user-data p {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #fff;
   text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
-.repo {
+.repo{
   list-style: none;
-  border: 1px solid black;
-  padding: 15px 25px;
+  border: 1px solid #F07D91;
+  color: #F07D91;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.repo h3{
+  padding:20px;
+}
+
+.repo h3:hover {
+  background-color: #F07D91;
+  color: #fff;
+  cursor: pointer;
 }
 
 .repos {
@@ -85,14 +110,16 @@ p {
 .filter-repos {
   margin: 30px 0;
   padding: 15px 25px;
+  border: 1px solid #3E84C0;
+  border-radius: 30px;
 }
 
 .repo-list {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 40px;
+  grid-gap: 30px;
   padding:0;
-  margin: 0 20px;
+  margin: 0 40px;
 }
 
 /* media queries */
@@ -102,16 +129,25 @@ p {
   grid-template-columns: 1fr 1fr;
 
  }
- .user-details > div {
-  flex-direction: row;
-  align-items:center;
-}
+   .user-details > div {
+    flex-direction: row;
+    align-items:center;
+  }
+   .user-data {
+    width: 40%;
+   }
+   .user-data p {
+      text-align: left;
+   }
+
+   .avatar {
+    margin-right:60px;
+   }
 }
 
 @media (min-width:980px) {
     /*Tablet and Desktop styles here*/
   .repo-list {
   grid-template-columns: 1fr 1fr 1fr;
-
- }
+  }
 }
