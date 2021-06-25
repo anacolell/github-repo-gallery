@@ -77,9 +77,10 @@ const displayRepo = (repoData, languages) => {
   let repoDiv = document.createElement('div');
   repoInfo.innerHTML = "";
   repoDiv.innerHTML = `
-  <p>${repoData.name}<p>
-  <p>${repoData.description}<p>
-  <p>${languages.join(', ')}`;
+  <p class="repo-name">Name: ${repoData.name}<p>
+  <p>Description: ${repoData.description}<p>
+  <p>Languages: ${languages.join(', ')}
+  <a class="visit" href="${repoData.html_url}" target="_blank" rel="noreferrer noopener">View Repo on GitHub</a>`;
   repoInfo.append(repoDiv);
   reposContainer.classList.add('hide');
   repoInfo.classList.remove('hide');
