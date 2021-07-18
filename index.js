@@ -33,7 +33,7 @@ const username = 'anacolell';
 const baseUrl = "https://api.github.com/graphql";
 
 const github_data = {
-  "token": "",
+  "token": API_TOKEN,
   "username": "anacolell"
 };
 
