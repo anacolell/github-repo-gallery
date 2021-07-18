@@ -6,50 +6,87 @@ const backBtn = document.querySelector('.view-repos');
 const filterInput = document.querySelector('.filter-repos');
 
 const username = 'anacolell';
-
 /* fetch users */
 
-const fetchUsers = async () => {
-  const userUrl = await fetch(`https://api.github.com/users/${username}`);
-  const userData = await userUrl.json();
-  displayUser(userData)
-  // console.log(userData)
+ const fetchUsers = async () => {
+   const userUrl = await fetch(`https://api.github.com/users/${username}`);
+   const userData = await userUrl.json();
+   displayUser(userData)
+ }
+
+   const displayUser = (userData) => {
+     let userDiv = document.createElement('div');
+     userDiv.innerHTML = `
+     <img class="avatar" src= ${userData.avatar_url}/>
+     <div class="user-data">
+       <p><strong>Name:</strong> ${userData.name}</p>
+       <p><strong>Location:</strong> ${userData.location}</p>
+       <p><strong>Number of public repos:</strong> ${userData.public_repos}</p>
+     </div>`;
+     userDetails.append(userDiv);
+   }
+
+   fetchUsers()
+
+/* fetch repos from Graphql */
+
+const baseUrl = "https://api.github.com/graphql";
+
+const github_data = {
+  "token": "",
+  "username": "anacolell"
+};
+
+const headers = {
+  'Content-Type': "application/json",
+  'Authorization': "bearer " + github_data["token"]
 }
 
-const displayUser = (userData) => {
-  let userDiv = document.createElement('div');
-  userDiv.innerHTML = `
-  <img class="avatar" src= ${userData.avatar_url}/>
-  <div class="user-data">
-    <p><strong>Name:</strong> ${userData.name}</p>
-    <p><strong>Location:</strong> ${userData.location}</p>
-    <p><strong>Number of public repos:</strong> ${userData.public_repos}</p>
-  </div>`;
-  userDetails.append(userDiv);
+const body = {
+  "query": `
+  query {
+    repositoryOwner(login:"anacolell"){
+      repositories(orderBy:{
+        field:CREATED_AT, direction:DESC}, first:100, privacy:PUBLIC){
+        nodes{
+          openGraphImageUrl,
+          name,
+          description,
+          url,
+          languages(first:10){
+            nodes{
+                name
+            }
+          }
+        }
+      }
+    }
+  }
+  `
 }
-
-fetchUsers()
-
-/* fetch repos */
 
 const fetchRepos = async () => {
-  const reposUrl = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
-  const reposData = await reposUrl.json();
-  displayRepos(reposData)
-  // console.log(reposData);
-}
+  const reposUrl = await fetch(baseUrl, {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify(body)
+})
+  let reposResponse = await reposUrl.json();
+  let repos = await reposResponse.data.repositoryOwner.repositories.nodes;
+  console.log(repos)
 
-const displayRepos = (reposData) => {
   filterInput.classList.remove('hide');
-  reposData.forEach((repo)=> {
-    let reposLi = document.createElement('li');
-    reposLi.classList.add('repo');
-    reposLi.innerHTML = `
-    <h3>${repo.name}</h3>
-    `;
-    repoList.append(reposLi);
-    reposLi.classList.add('repo');
-  })
+  repos.forEach((repo)=> {
+  console.log(repo.languages.nodes)
+  let reposLi = document.createElement('li');
+  reposLi.classList.add('repo');
+  reposLi.innerHTML = `
+  <h3>${repo.name}</h3>
+  <img src=${repo.openGraphImageUrl}>
+  `;
+  repoList.append(reposLi);
+  reposLi.classList.add('repo');
+})
 }
 
 fetchRepos()
@@ -112,4 +149,29 @@ filterInput.addEventListener('input', (e) => {
     }
   })
 })
+
+// const fetchReadme = async () => {
+//   const readmeUrl = await fetch(baseUrl, {
+//   method: "POST",
+//   headers: headers,
+//   body: JSON.stringify(bodyQuery)
+// })
+//   let readmeResponse = await readmeUrl.json();
+//   let readme = await readmeResponse.data.repository.object.text
+//   console.log(readme)
+// }
+//    const bodyQuery = {
+//   "query": `
+//   query {
+//     repository(owner: "anacolell", name: "locally") {
+//     object(expression: "master:README.md") {
+//       ... on Blob {
+//         text
+//       }
+//   }
+//   }
+// }
+//   `
+// }
+
 
