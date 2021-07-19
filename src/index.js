@@ -7,7 +7,6 @@ const repoInfo = document.querySelector('.repo-info');
 const backBtn = document.querySelector('.view-repos');
 const filterInput = document.querySelector('.filter-repos');
 const username = 'anacolell';
-console.log(process.env.MY_TOKEN)
 /* fetch users */
 
  const fetchUsers = async () => {
@@ -79,12 +78,23 @@ const fetchRepos = async () => {
 
   filterInput.classList.remove('hide');
   repos.forEach((repo)=> {
-  console.log(repo.languages.nodes)
+
+  const repoLanguages = repo.languages.nodes;
+  const languages = document.createElement("ul");
+  languages.classList.add("language-pill")
+
+  repoLanguages.forEach(language => {
+    const lang = document.createElement("li");
+    lang.textContent = Object.values(language)
+    languages.append(lang)
+  })
+      console.log(languages)
   let reposLi = document.createElement('li');
   reposLi.classList.add('repo');
   reposLi.innerHTML = `
   <h3>${repo.name}</h3>
   <img src=${repo.openGraphImageUrl}>
+  ${languages.outerHTML}
   `;
   repoList.append(reposLi);
   reposLi.classList.add('repo');
