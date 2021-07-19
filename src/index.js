@@ -1,13 +1,5 @@
-import getClasses from './getclasses'
 import '../css/style.css';
 
-console.log('ran from index.js')
-
-getClasses()
-
-const obj = { a: "alpha", b: "bravo"}
-const newObj = { ...obj, c: "charlie"}
-console.log(newObj)
 const userDetails = document.querySelector('.user-details');
 const repoList = document.querySelector('.repo-list');
 const reposContainer = document.querySelector('.repos');
@@ -99,7 +91,7 @@ const fetchRepos = async () => {
 })
 }
 
-// fetchRepos()
+fetchRepos()
 
 /* fetch individual repos when clicked */
 

@@ -50,34 +50,6 @@ function _asyncToGenerator(fn) {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ _defineProperty)
-/* harmony export */ });
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/regenerator/index.js":
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
@@ -86,62 +58,6 @@ function _defineProperty(obj, key, value) {
 
 module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
 
-
-/***/ }),
-
-/***/ "./src/barbarian.js":
-/*!**************************!*\
-  !*** ./src/barbarian.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "barbarian": () => (/* binding */ barbarian)
-/* harmony export */ });
-var barbarian = "hjulmar";
-
-/***/ }),
-
-/***/ "./src/getclasses.js":
-/*!***************************!*\
-  !*** ./src/getclasses.js ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _wizard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./wizard */ "./src/wizard.js");
-/* harmony import */ var _barbarian__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./barbarian */ "./src/barbarian.js");
-
-
-
-function getClasses() {
-  console.log("getClasses was called");
-  console.log(_wizard__WEBPACK_IMPORTED_MODULE_0__.wizard);
-  console.log(_barbarian__WEBPACK_IMPORTED_MODULE_1__.barbarian);
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getClasses);
-
-/***/ }),
-
-/***/ "./src/wizard.js":
-/*!***********************!*\
-  !*** ./src/wizard.js ***!
-  \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "wizard": () => (/* binding */ wizard)
-/* harmony export */ });
-var wizard = "Ravalynn";
 
 /***/ }),
 
@@ -1467,46 +1383,25 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _getclasses__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getclasses */ "./src/getclasses.js");
-/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/style.css */ "./css/style.css");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/style.css */ "./css/style.css");
 
 
 
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-
-
-console.log('ran from index.js');
-(0,_getclasses__WEBPACK_IMPORTED_MODULE_3__.default)();
-var obj = {
-  a: "alpha",
-  b: "bravo"
-};
-
-var newObj = _objectSpread(_objectSpread({}, obj), {}, {
-  c: "charlie"
-});
-
-console.log(newObj);
-var userDetails = document.querySelector('.user-details'); // const repoList = document.querySelector('.repo-list');
-// const reposContainer = document.querySelector('.repos');
-// const repoInfo = document.querySelector('.repo-info');
-// const backBtn = document.querySelector('.view-repos');
-// const filterInput = document.querySelector('.filter-repos');
-
+var userDetails = document.querySelector('.user-details');
+var repoList = document.querySelector('.repo-list');
+var reposContainer = document.querySelector('.repos');
+var repoInfo = document.querySelector('.repo-info');
+var backBtn = document.querySelector('.view-repos');
+var filterInput = document.querySelector('.filter-repos');
 var username = 'anacolell';
 /* fetch users */
 
 var fetchUsers = /*#__PURE__*/function () {
-  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee() {
+  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee() {
     var userUrl, userData;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().wrap(function _callee$(_context) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -1543,137 +1438,204 @@ var displayUser = function displayUser(userData) {
 
 fetchUsers();
 /* fetch repos from Graphql */
-// const baseUrl = "https://api.github.com/graphql";
-// const github_data = {
-//   "token": API_TOKEN,
-//   "username": "anacolell"
-// };
-// const headers = {
-//   'Content-Type': "application/json",
-//   'Authorization': "bearer " + github_data["token"]
-// }
-// const body = {
-//   "query": `
-//   query {
-//     repositoryOwner(login:"anacolell"){
-//       repositories(orderBy:{
-//         field:CREATED_AT, direction:DESC}, first:100, privacy:PUBLIC){
-//         nodes{
-//           openGraphImageUrl,
-//           name,
-//           description,
-//           url,
-//           languages(first:10){
-//             nodes{
-//                 name
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-//   `
-// }
-// const fetchRepos = async () => {
-//   const reposUrl = await fetch(baseUrl, {
-//   method: "POST",
-//   headers: headers,
-//   body: JSON.stringify(body)
-// })
-//   let reposResponse = await reposUrl.json();
-//   let repos = await reposResponse.data.repositoryOwner.repositories.nodes;
-//   console.log(repos)
-//   filterInput.classList.remove('hide');
-//   repos.forEach((repo)=> {
-//   console.log(repo.languages.nodes)
-//   let reposLi = document.createElement('li');
-//   reposLi.classList.add('repo');
-//   reposLi.innerHTML = `
-//   <h3>${repo.name}</h3>
-//   <img src=${repo.openGraphImageUrl}>
-//   `;
-//   repoList.append(reposLi);
-//   reposLi.classList.add('repo');
-// })
-// }
-// fetchRepos()
+
+var baseUrl = "https://api.github.com/graphql";
+var github_data = {
+  "token": '',
+  "username": "anacolell"
+};
+var headers = {
+  'Content-Type': "application/json",
+  'Authorization': "bearer " + github_data["token"]
+};
+var body = {
+  "query": "\n  query {\n    repositoryOwner(login:\"anacolell\"){\n      repositories(orderBy:{\n        field:CREATED_AT, direction:DESC}, first:100, privacy:PUBLIC){\n        nodes{\n          openGraphImageUrl,\n          name,\n          description,\n          url,\n          languages(first:10){\n            nodes{\n                name\n            }\n          }\n        }\n      }\n    }\n  }\n  "
+};
+
+var fetchRepos = /*#__PURE__*/function () {
+  var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee2() {
+    var reposUrl, reposResponse, repos;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return fetch(baseUrl, {
+              method: "POST",
+              headers: headers,
+              body: JSON.stringify(body)
+            });
+
+          case 2:
+            reposUrl = _context2.sent;
+            _context2.next = 5;
+            return reposUrl.json();
+
+          case 5:
+            reposResponse = _context2.sent;
+            _context2.next = 8;
+            return reposResponse.data.repositoryOwner.repositories.nodes;
+
+          case 8:
+            repos = _context2.sent;
+            console.log(repos);
+            filterInput.classList.remove('hide');
+            repos.forEach(function (repo) {
+              console.log(repo.languages.nodes);
+              var reposLi = document.createElement('li');
+              reposLi.classList.add('repo');
+              reposLi.innerHTML = "\n  <h3>".concat(repo.name, "</h3>\n  <img src=").concat(repo.openGraphImageUrl, ">\n  ");
+              repoList.append(reposLi);
+              reposLi.classList.add('repo');
+            });
+
+          case 12:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+
+  return function fetchRepos() {
+    return _ref2.apply(this, arguments);
+  };
+}(); // fetchRepos()
 
 /* fetch individual repos when clicked */
-// repoList.addEventListener('click', function(e) {
-//   if (e.target.matches("h3")){
-//     let repoName = e.target.innerText;
-//     fetchRepo(repoName)
-//   }
-// })
-// const fetchRepo = async (repoName) => {
-//   const repoUrl = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
-//   const repoData = await repoUrl.json();
-//   const languagesUrl = await fetch(`https://api.github.com/repos/${username}/${repoName}/languages`);
-//   const languagesData = await languagesUrl.json();
-//   const languages = Object.keys(languagesData);
-//   console.log(repoData)
-//   displayRepo(repoData, languages)
-// }
-// const displayRepo = (repoData, languages) => {
-//   let repoDiv = document.createElement('div');
-//   repoInfo.innerHTML = "";
-//   repoDiv.innerHTML = `
-//   <p class="repo-name">Name: ${repoData.name}<p>
-//   <p>Description: ${repoData.description}<p>
-//   <p>Languages: ${languages.join(', ')}
-//   <a class="visit" href="${repoData.html_url}" target="_blank" rel="noreferrer noopener">View Repo on GitHub</a>`;
-//   repoInfo.append(repoDiv);
-//   reposContainer.classList.add('hide');
-//   repoInfo.classList.remove('hide');
-//   backBtn.classList.remove('hide')
-//   filterInput.classList.add('hide');
-// }
 
+
+repoList.addEventListener('click', function (e) {
+  if (e.target.matches("h3")) {
+    var repoName = e.target.innerText;
+    fetchRepo(repoName);
+  }
+});
+
+var fetchRepo = /*#__PURE__*/function () {
+  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee3(repoName) {
+    var repoUrl, repoData, languagesUrl, languagesData, languages;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return fetch("https://api.github.com/repos/".concat(username, "/").concat(repoName));
+
+          case 2:
+            repoUrl = _context3.sent;
+            _context3.next = 5;
+            return repoUrl.json();
+
+          case 5:
+            repoData = _context3.sent;
+            _context3.next = 8;
+            return fetch("https://api.github.com/repos/".concat(username, "/").concat(repoName, "/languages"));
+
+          case 8:
+            languagesUrl = _context3.sent;
+            _context3.next = 11;
+            return languagesUrl.json();
+
+          case 11:
+            languagesData = _context3.sent;
+            languages = Object.keys(languagesData);
+            console.log(repoData);
+            displayRepo(repoData, languages);
+
+          case 15:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function fetchRepo(_x) {
+    return _ref3.apply(this, arguments);
+  };
+}();
+
+var displayRepo = function displayRepo(repoData, languages) {
+  var repoDiv = document.createElement('div');
+  repoInfo.innerHTML = "";
+  repoDiv.innerHTML = "\n  <p class=\"repo-name\">Name: ".concat(repoData.name, "<p>\n  <p>Description: ").concat(repoData.description, "<p>\n  <p>Languages: ").concat(languages.join(', '), "\n  <a class=\"visit\" href=\"").concat(repoData.html_url, "\" target=\"_blank\" rel=\"noreferrer noopener\">View Repo on GitHub</a>");
+  repoInfo.append(repoDiv);
+  reposContainer.classList.add('hide');
+  repoInfo.classList.remove('hide');
+  backBtn.classList.remove('hide');
+  filterInput.classList.add('hide');
+};
 /* hide button when going back to repo list */
-// backBtn.addEventListener('click', (e)=> {
-//   reposContainer.classList.remove('hide');
-//   repoInfo.classList.add('hide');
-//   backBtn.classList.add('hide');
-//   filterInput.classList.remove('hide')
-// })
 
+
+backBtn.addEventListener('click', function (e) {
+  reposContainer.classList.remove('hide');
+  repoInfo.classList.add('hide');
+  backBtn.classList.add('hide');
+  filterInput.classList.remove('hide');
+});
 /* search function */
-// filterInput.addEventListener('input', (e) => {
-//   let value = e.target.value;
-//   let valueLowerCase = e.target.value.toLowerCase();
-//   let repos = document.querySelectorAll('.repo')
-//   repos.forEach((repo)=>{
-//     let repoTitle = repo.innerText.toLowerCase();
-//     if (repoTitle.includes(valueLowerCase)){
-//       repo.classList.remove('hide');
-//     } else {
-//       repo.classList.add('hide');
-//     }
-//   })
-// })
-// const fetchReadme = async () => {
-//   const readmeUrl = await fetch(baseUrl, {
-//   method: "POST",
-//   headers: headers,
-//   body: JSON.stringify(bodyQuery)
-// })
-//   let readmeResponse = await readmeUrl.json();
-//   let readme = await readmeResponse.data.repository.object.text
-//   console.log(readme)
-// }
-//    const bodyQuery = {
-//   "query": `
-//   query {
-//     repository(owner: "anacolell", name: "locally") {
-//     object(expression: "master:README.md") {
-//       ... on Blob {
-//         text
-//       }
-//   }
-//   }
-// }
-//   `
-// }
+
+filterInput.addEventListener('input', function (e) {
+  var value = e.target.value;
+  var valueLowerCase = e.target.value.toLowerCase();
+  var repos = document.querySelectorAll('.repo');
+  repos.forEach(function (repo) {
+    var repoTitle = repo.innerText.toLowerCase();
+
+    if (repoTitle.includes(valueLowerCase)) {
+      repo.classList.remove('hide');
+    } else {
+      repo.classList.add('hide');
+    }
+  });
+});
+
+var fetchReadme = /*#__PURE__*/function () {
+  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee4() {
+    var readmeUrl, readmeResponse, readme;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return fetch(baseUrl, {
+              method: "POST",
+              headers: headers,
+              body: JSON.stringify(bodyQuery)
+            });
+
+          case 2:
+            readmeUrl = _context4.sent;
+            _context4.next = 5;
+            return readmeUrl.json();
+
+          case 5:
+            readmeResponse = _context4.sent;
+            _context4.next = 8;
+            return readmeResponse.data.repository.object.text;
+
+          case 8:
+            readme = _context4.sent;
+            console.log(readme);
+
+          case 10:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+
+  return function fetchReadme() {
+    return _ref4.apply(this, arguments);
+  };
+}();
+
+var bodyQuery = {
+  "query": "\n  query {\n    repository(owner: \"anacolell\", name: \"locally\") {\n    object(expression: \"master:README.md\") {\n      ... on Blob {\n        text\n      }\n  }\n  }\n}\n  "
+};
 })();
 
 /******/ })()
