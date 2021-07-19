@@ -7,6 +7,7 @@ const repoInfo = document.querySelector('.repo-info');
 const backBtn = document.querySelector('.view-repos');
 const filterInput = document.querySelector('.filter-repos');
 const username = 'anacolell';
+console.log(process.env.MY_TOKEN)
 /* fetch users */
 
  const fetchUsers = async () => {
