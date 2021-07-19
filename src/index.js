@@ -1,3 +1,13 @@
+import getClasses from './getclasses'
+import '../css/style.css';
+
+console.log('ran from index.js')
+
+getClasses()
+
+const obj = { a: "alpha", b: "bravo"}
+const newObj = { ...obj, c: "charlie"}
+console.log(newObj)
 const userDetails = document.querySelector('.user-details');
 const repoList = document.querySelector('.repo-list');
 const reposContainer = document.querySelector('.repos');
@@ -33,7 +43,7 @@ const username = 'anacolell';
 const baseUrl = "https://api.github.com/graphql";
 
 const github_data = {
-  "token": API_TOKEN,
+  "token": '',
   "username": "anacolell"
 };
 
@@ -89,7 +99,7 @@ const fetchRepos = async () => {
 })
 }
 
-fetchRepos()
+// fetchRepos()
 
 /* fetch individual repos when clicked */
 
@@ -150,28 +160,28 @@ filterInput.addEventListener('input', (e) => {
   })
 })
 
-// const fetchReadme = async () => {
-//   const readmeUrl = await fetch(baseUrl, {
-//   method: "POST",
-//   headers: headers,
-//   body: JSON.stringify(bodyQuery)
-// })
-//   let readmeResponse = await readmeUrl.json();
-//   let readme = await readmeResponse.data.repository.object.text
-//   console.log(readme)
-// }
-//    const bodyQuery = {
-//   "query": `
-//   query {
-//     repository(owner: "anacolell", name: "locally") {
-//     object(expression: "master:README.md") {
-//       ... on Blob {
-//         text
-//       }
-//   }
-//   }
-// }
-//   `
-// }
+const fetchReadme = async () => {
+  const readmeUrl = await fetch(baseUrl, {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify(bodyQuery)
+})
+  let readmeResponse = await readmeUrl.json();
+  let readme = await readmeResponse.data.repository.object.text
+  console.log(readme)
+}
+   const bodyQuery = {
+  "query": `
+  query {
+    repository(owner: "anacolell", name: "locally") {
+    object(expression: "master:README.md") {
+      ... on Blob {
+        text
+      }
+  }
+  }
+}
+  `
+}
 
 
