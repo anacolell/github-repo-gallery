@@ -1395,6 +1395,7 @@ var reposContainer = document.querySelector('.repos');
 var repoInfo = document.querySelector('.repo-info');
 var backBtn = document.querySelector('.view-repos');
 var filterInput = document.querySelector('.filter-repos');
+console.log("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");
 var username = 'anacolell';
 /* fetch users */
 
@@ -1500,10 +1501,10 @@ var fetchRepos = /*#__PURE__*/function () {
   return function fetchRepos() {
     return _ref2.apply(this, arguments);
   };
-}(); // fetchRepos()
+}();
 
+fetchRepos();
 /* fetch individual repos when clicked */
-
 
 repoList.addEventListener('click', function (e) {
   if (e.target.matches("h3")) {

@@ -6,7 +6,6 @@ const reposContainer = document.querySelector('.repos');
 const repoInfo = document.querySelector('.repo-info');
 const backBtn = document.querySelector('.view-repos');
 const filterInput = document.querySelector('.filter-repos');
-
 const username = 'anacolell';
 /* fetch users */
 
@@ -35,7 +34,7 @@ const username = 'anacolell';
 const baseUrl = "https://api.github.com/graphql";
 
 const github_data = {
-  "token": '',
+  "token": process.env.MY_TOKEN,
   "username": "anacolell"
 };
 
