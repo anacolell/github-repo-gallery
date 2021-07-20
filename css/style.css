@@ -33,33 +33,6 @@ body {
   position:relative;
 }
 
-.pin {
-  height: 80px;
-  width: 50px;
-  background-color: grey;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  position:absolute;
-  position: absolute;
-  margin-top: -45px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-.circle {
-  width: 20px;
-  height: 20px;
-  background-color: #3E84C0;
-  border-radius: 100%;
-  align-self: center;
-  margin-top: auto;
-  margin-bottom: 8px;
-}
-
 .title {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
@@ -115,15 +88,18 @@ body {
 }
 
 .repo{
+  padding:20px;
   list-style: none;
   border: 1px solid #F07D91;
-  color: #F07D91;
+/*  background-color: blue;*/
   font-weight: bold;
   border-radius: 5px;
 }
 
 .repo img {
   width:100%;
+  object-fit:cover;
+  height:200px;
 }
 
 .repo h3{
@@ -131,8 +107,8 @@ body {
 }
 
 .repo h3:hover {
-  background-color: #F07D91;
-  color: #fff;
+/*  background-color: #F07D91;
+  color: #fff;*/
   cursor: pointer;
 }
 
@@ -174,13 +150,19 @@ body {
   font-weight:bold;
 }
 
-.language-pill li {
+.language {
+  padding: 20px 0;
+}
+
+.language li {
+  font-size:12px;
   padding:10px 15px;
   list-style: none;
   background-color: pink;
   border-radius: 20px;
   display:inline-block;
   margin-left:10px;
+  margin-top:5px;
 }
 /* buttons */
 
