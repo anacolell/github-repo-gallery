@@ -18,26 +18,24 @@ p {
 }
 
 body {
-  background-color: #EDEEF0;
+  background: linear-gradient(270deg, rgba(194,189,221,1) 0%, rgba(236,233,252,1) 59%);
 }
 
 .container {
   margin: 0 auto;
-  background-color: #fff;
+  background: linear-gradient(153deg, rgba(253,244,246,1) 15%, rgba(255,255,255,1) 41%, rgba(238,244,252,1) 99%);
   width: 90%;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  border-radius:5px;
   margin-top: 60px;
   margin-bottom: 40px;
   padding-bottom:40px;
-  position:relative;
 }
 
 .title {
-  font-family: 'Oswald', sans-serif;
+/*  font-family: 'Oswald', sans-serif;*/
+  font-family:'Stardos Stencil', cursive;
   text-transform: uppercase;
-  background-color: #3E84C0;
-  color: #fff;
+  color: #23364B;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   text-align: center;
@@ -62,7 +60,6 @@ body {
 
 .user-info {
   padding-bottom: 30px;
-  background-color: #3E84C0;
 }
 
 .user-details > div {
@@ -70,7 +67,7 @@ body {
   flex-direction: column;
   align-items:center;
   justify-content: center;
-  color: #fff;
+  color: ##23364B;
 }
 
 .user-data {
@@ -88,26 +85,62 @@ body {
 }
 
 .repo{
-  padding:20px;
   list-style: none;
-  border: 1px solid #F07D91;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 10px;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .repo img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  display:block;
   width:100%;
   object-fit:cover;
   height:200px;
 }
 
-.repo h3{
-  padding:20px;
+.repo-description {
+  font-size:1.25em;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.repo h3:hover {
-  cursor: pointer;
+.repo-overlay {
+  border-radius: 10px;
+  position:absolute;
+  padding:0 20px;
+  top:0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.6);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+/*.repo-overlay-blur {
+  backdrop-filter:blur(5px);
+}*/
+
+.repo-overlay > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.repo-overlay:hover {
+  opacity: 1;
+}
+
+.repo-overlay:hover > * {
+  transform: translateY(0);
 }
 
 .repos {
@@ -143,25 +176,28 @@ body {
 }
 
 .repo-name {
-  color: #F07D91;
-  font-size: 18px;
+  padding:20px;
+  padding-top:10px;
+  color: #23364B;
+  font-size: 1.5em;
   font-weight:bold;
+  text-align: left;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.language {
-  padding: 20px 0;
+.language-list {
+  text-align: right;
+  padding-top:20px;
 }
 
-.language li {
-  font-size:12px;
-  padding:10px 15px;
+.language-list li{
   list-style: none;
-  background-color: pink;
-  border-radius: 20px;
   display:inline-block;
-  margin-left:10px;
-  margin-top:5px;
+  font-size: 30px;
+  padding: 8px 8px;
 }
+
+
 /* buttons */
 
 .visit {
@@ -195,11 +231,6 @@ body {
 .view-repos:focus {
   cursor:pointer;
   opacity:0.8;
-}
-
-.icon {
-  font-size: 30px;
-  text-align: right;
 }
 
 /* media queries */

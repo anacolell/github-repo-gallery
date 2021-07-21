@@ -25,8 +25,8 @@ const displayUser = (userData) => {
   userDiv.innerHTML = `
     <img class="avatar" src= ${userData.avatar_url}/>
     <div class="user-data">
-      <p><strong>Name:</strong> ${userData.name}</p>
-      <p><strong>Location:</strong> ${userData.location}</p>
+      <p>${userData.name}</p>
+      <p><i class="fas fa-map-pin"></i> ${userData.location}</p>
       <p><strong>Number of public repos:</strong> ${userData.public_repos}</p>
     </div>`;
   userDetails.append(userDiv);
@@ -78,38 +78,20 @@ const fetchRepos = async () => {
 
 fetchRepos()
 
-const formatUnits = (value, unit) => {
-    switch (unit) {
-      case 'eur':
-        return `${value} €`;
-        break;
-      case 'gbp':
-        return `£${value}`;
-        break;
-      case 'usd':
-        return `$${value}`;
-      default:
-        return `${value} ${unit}`;
-    }
-}
-
 const setLanguageIcon = (language) => {
   switch (language) {
     case 'JavaScript':
-      return '<i class="devicon-javascript-plain colored icon"></i>';
+      return '<i class="devicon-javascript-plain colored"></i>';
       break;
     case 'Ruby':
-      return '<i class="devicon-ruby-plain-wordmark colored icon"></i>';
+      return '<i class="devicon-ruby-plain-wordmark colored"></i>';
       break;
     case 'CSS':
     case 'SCSS':
-      return '<i class="devicon-css3-plain-wordmark colored icon"></i>';
+      return '<i class="devicon-css3-plain-wordmark colored"></i>';
       break;
     case 'HTML':
-      return '<i class="devicon-html5-plain-wordmark colored icon"></i>';
-      break;
-    case 'Vim script':
-      return '<i class="devicon-vim-plain colored icon"></i>';
+      return '<i class="devicon-html5-plain-wordmark colored"></i>';
       break;
     default:
       return language
@@ -120,22 +102,18 @@ const displayRepos = (repos) => {
   filterInput.classList.remove('hide');
   repos.forEach((repo)=> {
     const repoLanguages = repo.languages.nodes;
-    const languages = [];
-
-    repoLanguages.forEach(language => {
-      let langName = language.name
-      console.log(langName)
-      let icon = setLanguageIcon(langName)
-      languages.push(icon)
+    let languages = repoLanguages.map(language => {
+      return `<li>${setLanguageIcon(language.name)}</li>`
     })
-
     let reposLi = document.createElement('li');
     reposLi.classList.add('repo');
     reposLi.innerHTML = `
-      <h3>${repo.name}</h3>
-      <img src=${repo.openGraphImageUrl}>
-      ${languages.join(' ')}
-      <p>${repo.description}</p>
+      <img src =${repo.openGraphImageUrl}>
+      <ul class="language-list">${languages.join(' ')}</ul>
+      <h3 class="repo-name">${repo.name}</h3>
+      <div class="repo-overlay repo-overlay-blur">
+        <p class="repo-description">${repo.description}</p>
+      </div>
     `;
     repoList.append(reposLi);
     reposLi.classList.add('repo');
@@ -155,6 +133,18 @@ repoList.addEventListener('click', function(e) {
   let repoInfo = {};
   fetchRepo(repoName)
 })
+
+// repoList.addEventListener('mouseover', function(e) {
+//   let item = e.target;
+//   if (item.classList.contains('repo-list')){
+//     return;
+//   } else {
+//     while (!item.classList.contains('repo')){
+//       item = item.parentElement
+//     }
+//   }
+//   console.log('Test')
+// })
 
 const fetchRepo = async (repoName) => {
   let repoPic = "";
