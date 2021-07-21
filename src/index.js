@@ -134,18 +134,6 @@ repoList.addEventListener('click', function(e) {
   fetchRepo(repoName)
 })
 
-// repoList.addEventListener('mouseover', function(e) {
-//   let item = e.target;
-//   if (item.classList.contains('repo-list')){
-//     return;
-//   } else {
-//     while (!item.classList.contains('repo')){
-//       item = item.parentElement
-//     }
-//   }
-//   console.log('Test')
-// })
-
 const fetchRepo = async (repoName) => {
   let repoPic = "";
   let repoHomeUrl = "";
@@ -181,6 +169,7 @@ const displayRepo = (repoPic, languagesList, repoDescription, repoUrl, repoHomeU
   repoInfo.classList.remove('hide');
   backBtn.classList.remove('hide')
   filterInput.classList.add('hide');
+  userDetails.classList.add('hide');
 }
 
 const fetchReadme = async (repoName) => {
@@ -229,6 +218,7 @@ backBtn.addEventListener('click', (e) => {
   repoInfo.classList.add('hide');
   backBtn.classList.add('hide');
   filterInput.classList.remove('hide')
+  userDetails.classList.remove('hide');
 })
 
 filterInput.addEventListener('input', (e) => {
