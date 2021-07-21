@@ -91,7 +91,7 @@ body {
   padding:20px;
   list-style: none;
   border: 1px solid #F07D91;
-/*  background-color: blue;*/
+  cursor: pointer;
   font-weight: bold;
   border-radius: 5px;
 }
@@ -107,8 +107,6 @@ body {
 }
 
 .repo h3:hover {
-/*  background-color: #F07D91;
-  color: #fff;*/
   cursor: pointer;
 }
 
@@ -197,6 +195,11 @@ body {
 .view-repos:focus {
   cursor:pointer;
   opacity:0.8;
+}
+
+.icon {
+  font-size: 30px;
+  text-align: right;
 }
 
 /* media queries */
