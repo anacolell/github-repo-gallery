@@ -64,6 +64,12 @@ body {
  .language-list li {
   font-size: 30px;
  }
+ .user-data p {
+  font-size: 20px;
+}
+ .user-data .username {
+  font-size: 28px;
+}
 }
 
 @media (min-width:980px) {

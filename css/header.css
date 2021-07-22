@@ -43,11 +43,11 @@
 }
 
 .user-data p {
-  font-size: 20px;
-  margin-bottom:10px;
+  font-size: 18px;
+  margin-bottom:6px;
 }
 
 .user-data .username {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
 }
