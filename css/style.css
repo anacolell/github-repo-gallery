@@ -4,12 +4,9 @@
 @import "buttons";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Stardos+Stencil:wght@400;700&display=swap');
 
-/* Box sizing rules */
 * {
   box-sizing: border-box;
 }
-
-/* Remove default margin */
 
 body,
 h1,
@@ -24,9 +21,8 @@ p {
 }
 
 body {
-  background: linear-gradient(270deg, rgba(194,189,221,1) 0%, rgba(236,233,252,1) 59%);
+ /* background: linear-gradient(270deg, rgba(194,189,221,1) 0%, rgba(236,233,252,1) 59%);*/
   background: #F5F6FA;
-/*  background: #424A6B;*/
 }
 
 .container {
@@ -45,35 +41,33 @@ body {
 
 /* media queries */
 @media (min-width:700px) {
-    /*Tablet and Desktop styles here*/
- .repo-list {
-  grid-template-columns: 1fr 1fr;
- }
- .header {
-  align-items:center;
- }
- .title {
-  font-size: 55px;
- }
- .avatar {
-  width: 200px;
- }
- .repo-name {
-  font-size: 22px;
- }
- .language-list li {
-  font-size: 30px;
- }
- .user-data p {
-  font-size: 20px;
-}
- .user-data .username {
-  font-size: 28px;
-}
+   .repo-list {
+    grid-template-columns: 1fr 1fr;
+   }
+   .header {
+    align-items:center;
+   }
+   .title {
+    font-size: 55px;
+   }
+   .avatar {
+    width: 200px;
+   }
+   .repo-name {
+    font-size: 22px;
+   }
+   .language-list li {
+    font-size: 30px;
+   }
+   .user-data p {
+    font-size: 20px;
+  }
+   .user-data .username {
+    font-size: 28px;
+  }
 }
 
 @media (min-width:980px) {
-    /*Tablet and Desktop styles here*/
   .repo-list {
   grid-template-columns: 1fr 1fr 1fr;
   }

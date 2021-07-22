@@ -30,7 +30,6 @@ const displayUser = (userData) => {
     </div>`;
     // <p><strong>Public repos:</strong> ${userData.public_repos}</p>
   userDetails.append(userDiv);
-  console.log(userDiv)
 }
 
 fetchUsers()
@@ -152,25 +151,8 @@ const fetchRepo = async (repoName) => {
       })
     }
   })
-  fetchReadme(repoName)
-  displayRepo(repoPic, languagesList, repoDescription, repoUrl, repoHomeUrl, repoName)
-}
-
-const displayRepo = (repoPic, languagesList, repoDescription, repoUrl, repoHomeUrl, repoName) => {
-  let repoDiv = document.createElement('div');
-  repoInfo.innerHTML = "";
-  repoDiv.innerHTML = `
-  <p class="repo-name">Name: ${repoName}<p>
-  <p>Description: ${repoDescription}<p>
-  <p>Languages: ${languagesList}
-  <a class="visit" href="${repoUrl}" target="_blank" rel="noreferrer noopener">View Repo on GitHub</a>
-  <a class="visit" href="${repoHomeUrl}" target="_blank" rel="noreferrer noopener">View live</a>`;
-  repoInfo.append(repoDiv);
-  reposContainer.classList.add('hide');
-  repoInfo.classList.remove('hide');
-  backBtn.classList.remove('hide')
-  filterInput.classList.add('hide');
-  userDetails.classList.add('hide');
+  let readme = await fetchReadme(repoName)
+  displayRepo(repoPic, languagesList, repoDescription, repoUrl, repoHomeUrl, repoName, readme)
 }
 
 const fetchReadme = async (repoName) => {
@@ -195,7 +177,7 @@ const fetchReadme = async (repoName) => {
 
   let readmeResponse = await readmeUrl.json();
   let readme = await readmeResponse.data.repository.object.text
-  fetchMarkDown(readme)
+  return readme
 }
 
  const fetchMarkDown = async (readme) => {
@@ -209,10 +191,29 @@ const fetchReadme = async (repoName) => {
     })
   });
   let finalReadme = await res.text()
-  const newDiv = document.createElement("div")
-  newDiv.innerHTML = finalReadme
-  repoInfo.append(newDiv)
+  return finalReadme
  }
+
+
+const displayRepo = async (repoPic, languagesList, repoDescription, repoUrl, repoHomeUrl, repoName, readme) => {
+  let markdown = await fetchMarkDown(readme)
+
+  let repoDiv = document.createElement('div');
+  repoInfo.innerHTML = "";
+  repoDiv.innerHTML = `
+  <p class="repo-name">Name: ${repoName}<p>
+  <p>Description: ${repoDescription}<p>
+  <p>Languages: ${languagesList}
+  <div class="markdown">${markdown}</div>
+  <a class="visit" href="${repoUrl}" target="_blank" rel="noreferrer noopener">View Repo on GitHub</a>
+  <a class="visit" href="${repoHomeUrl}" target="_blank" rel="noreferrer noopener">View live</a>`;
+  repoInfo.append(repoDiv);
+  reposContainer.classList.add('hide');
+  repoInfo.classList.remove('hide');
+  backBtn.classList.remove('hide')
+  filterInput.classList.add('hide');
+  userDetails.classList.add('hide');
+}
 
 backBtn.addEventListener('click', (e) => {
   reposContainer.classList.remove('hide');
