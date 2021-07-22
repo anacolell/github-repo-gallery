@@ -25,11 +25,12 @@ const displayUser = (userData) => {
   userDiv.innerHTML = `
     <img class="avatar" src= ${userData.avatar_url}/>
     <div class="user-data">
-      <p>${userData.name}</p>
-      <p><i class="fas fa-map-pin"></i> ${userData.location}</p>
-      <p><strong>Number of public repos:</strong> ${userData.public_repos}</p>
+      <p class="username">${userData.name}</p>
+      <p><i class="fas fa-map-marker-alt"></i> ${userData.location}</p>
     </div>`;
+    // <p><strong>Public repos:</strong> ${userData.public_repos}</p>
   userDetails.append(userDiv);
+  console.log(userDiv)
 }
 
 fetchUsers()

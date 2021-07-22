@@ -1,0 +1,33 @@
+
+.visit {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  background-color: #F07D91;
+  max-width: 200px;
+  text-align:center;
+  padding:10px;
+  margin-top:40px;
+  border: 1px solid #fff;
+  border-radius:8px;
+}
+
+.visit:hover {
+  opacity:0.8;
+}
+
+.view-repos {
+  background-color: #fff ;
+  color: #F07D91;
+  padding: 10px 20px;
+  border:1px solid #F07D91;
+  margin-left: 40px;
+  border-radius: 8px;
+}
+
+.view-repos:hover,
+.view-repos:focus {
+  cursor:pointer;
+  opacity:0.8;
+}

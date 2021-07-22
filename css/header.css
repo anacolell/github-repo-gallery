@@ -1,0 +1,53 @@
+.header {
+  background: #DEDFF1;
+  border-radius: 0 0 85% 85% / 30%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  display:flex;
+  flex-direction: column;
+  padding: 40px 0;
+}
+
+.title {
+  font-family:'Stardos Stencil', cursive;
+  text-align:center;
+  color: #23364B;
+  font-size: 40px;
+}
+
+.fa-github {
+  font-size: 50px;
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.user-info {
+  padding: 30px 0;
+}
+
+.user-details > div {
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  color: ##23364B;
+}
+
+.user-data {
+  text-align:center;
+  margin-top:15px;
+}
+
+.user-data p {
+  font-size: 20px;
+  margin-bottom:10px;
+}
+
+.user-data .username {
+  font-size: 28px;
+  font-weight: bold;
+}
