@@ -1,1 +1,1 @@
-Visual gallery of my GitHub repos 
+Visual gallery of my GitHub repos
