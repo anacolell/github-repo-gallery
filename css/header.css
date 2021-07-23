@@ -54,9 +54,6 @@
 
 /* media queries */
 @media (min-width:700px) {
-   .repo-list {
-    grid-template-columns: 1fr 1fr;
-   }
    .header {
     align-items:center;
    }
@@ -77,11 +74,5 @@
   }
    .user-data .username {
     font-size: 28px;
-  }
-}
-
-@media (min-width:980px) {
-  .repo-list {
-  grid-template-columns: 1fr 1fr 1fr;
   }
 }

@@ -170,6 +170,7 @@ const fetchReadme = async (repoName) => {
   }
     `
   }
+
   const readmeUrl = await fetch(baseUrl, {
     method: "POST",
     headers: headers,
@@ -195,13 +196,11 @@ const fetchReadme = async (repoName) => {
   return finalReadme
  }
 
-
 const displayRepo = async (repoPic, languagesList, repoDescription, repoUrl, repoHomeUrl, repoName, readme) => {
   let markdown = await fetchMarkDown(readme)
   let repoLanguages = languagesList.map(language => {
       return `<li>${language}</li>`
     })
-  console.log(repoLanguages)
   let repoDiv = document.createElement('div');
   repoDiv.classList.add('repo-display-container')
   repoInfo.innerHTML = "";
@@ -221,7 +220,7 @@ const displayRepo = async (repoPic, languagesList, repoDescription, repoUrl, rep
     </div>
     </div>
     <div class="markdown">${markdown}</div>
-`;
+  `;
   repoInfo.append(repoDiv);
   reposContainer.classList.add('hide');
   repoInfo.classList.remove('hide');
@@ -251,4 +250,3 @@ filterInput.addEventListener('input', (e) => {
     }
   })
 })
-

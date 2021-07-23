@@ -9,17 +9,17 @@
 .btn {
   text-decoration: none;
   cursor: pointer;
-  text-align:center;
-  padding:10px;
+  text-align: center;
+  padding: 10px;
   margin-top: 10px;
   border-radius:10px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .view-github {
   background-color: hsl(350, 79%, 72%);
   color: #fff;
-  margin-right:10px;
+  margin-right: 10px;
 }
 
 .view-live {
@@ -38,18 +38,18 @@
 }
 
 .btn-wrapper {
-  padding-top:40px;
-  display:flex;
+  padding-top: 40px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .view-repos {
-  font-size:16px;
+  font-size: 16px;
   background-color: #fff ;
   color: hsl(350, 79%, 72%);
   padding: 12px 28px;
-  border:1.5px solid hsl(350, 79%, 72%);
+  border: 1.5px solid hsl(350, 79%, 72%);
   text-align: center;
 }
 

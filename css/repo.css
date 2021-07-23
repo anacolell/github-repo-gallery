@@ -2,7 +2,7 @@
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   background: linear-gradient(169deg, rgba(221,209,249,1) 0%, rgba(255,255,255,1) 78%);
-  padding-bottom:40px;
+  padding-bottom: 40px;
 }
 
 .repo-display-details > p {
@@ -11,8 +11,8 @@
 }
 
 .repo-display-pic {
-  width:90%;
-  margin:20px;
+  width: 90%;
+  margin: 20px;
   border-radius: 20px;
   border: 3px solid #fff;
 }
@@ -39,21 +39,21 @@
 .repo-display-languages li {
   font-weight: bold;
   display: inline-block;
-  padding:6px 10px;
+  padding: 6px 10px;
   background-color: #f7d9df;
   border-radius: 20px;
   font-size: 14px;
 }
 
 .markdown {
-  padding:10px;
+  padding: 10px;
 }
 
 /* media queries */
 @media (min-width:700px) {
   .repo-display-info {
     margin: 50px 0;
-    display:flex;
+    display: flex;
     justify-content: space-around;
     align-items: center;
   }
