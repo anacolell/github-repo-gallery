@@ -2,6 +2,7 @@ import '../css/style.css';
 
 const userDetails = document.querySelector('.user-details');
 const repoList = document.querySelector('.repo-list');
+const header = document.querySelector('.header');
 const reposContainer = document.querySelector('.repos');
 const repoInfo = document.querySelector('.repo-info');
 const backBtn = document.querySelector('.view-repos');
@@ -197,22 +198,36 @@ const fetchReadme = async (repoName) => {
 
 const displayRepo = async (repoPic, languagesList, repoDescription, repoUrl, repoHomeUrl, repoName, readme) => {
   let markdown = await fetchMarkDown(readme)
-
+  let repoLanguages = languagesList.map(language => {
+      return `<li>${language}</li>`
+    })
+  console.log(repoLanguages)
   let repoDiv = document.createElement('div');
+  repoDiv.classList.add('repo-display-container')
   repoInfo.innerHTML = "";
   repoDiv.innerHTML = `
-  <p class="repo-name">Name: ${repoName}<p>
-  <p>Description: ${repoDescription}<p>
-  <p>Languages: ${languagesList}
-  <div class="markdown">${markdown}</div>
-  <a class="visit" href="${repoUrl}" target="_blank" rel="noreferrer noopener">View Repo on GitHub</a>
-  <a class="visit" href="${repoHomeUrl}" target="_blank" rel="noreferrer noopener">View live</a>`;
+    <div class="repo-upper">
+    <h3 class="repo-display-name">${repoName}</h3>
+    <div class=repo-display-info>
+      <img class="repo-display-pic" src=${repoPic}>
+      <div class="repo-display-details">
+        <p class"repo-display-description">${repoDescription}<p>
+        <ul class="repo-display-languages">${repoLanguages.join(' ')}</ul>
+        <div class="btns">
+          <a class="btn view-github" href="${repoUrl}" target="_blank" rel="noreferrer noopener">View Repo on GitHub</a>
+          <a class="btn view-live" href="${repoHomeUrl}" target="_blank" rel="noreferrer noopener">View live</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="markdown">${markdown}</div>
+`;
   repoInfo.append(repoDiv);
   reposContainer.classList.add('hide');
   repoInfo.classList.remove('hide');
   backBtn.classList.remove('hide')
   filterInput.classList.add('hide');
-  userDetails.classList.add('hide');
+  header.classList.add('hide');
 }
 
 backBtn.addEventListener('click', (e) => {
@@ -220,7 +235,7 @@ backBtn.addEventListener('click', (e) => {
   repoInfo.classList.add('hide');
   backBtn.classList.add('hide');
   filterInput.classList.remove('hide')
-  userDetails.classList.remove('hide');
+  header.classList.remove('hide');
 })
 
 filterInput.addEventListener('input', (e) => {

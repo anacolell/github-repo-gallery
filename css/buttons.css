@@ -1,33 +1,56 @@
-
-.visit {
-  text-decoration: none;
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  background-color: #F07D91;
-  max-width: 200px;
-  text-align:center;
-  padding:10px;
-  margin-top:40px;
-  border: 1px solid #fff;
-  border-radius:8px;
+.btns {
+  margin-top: 60px;
+  text-align: center;
 }
 
-.visit:hover {
-  opacity:0.8;
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  text-align:center;
+  padding:10px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+.view-github {
+  background-color: hsl(350, 79%, 72%);
+  color: #fff;
+  margin-right:10px;
+}
+
+.view-live {
+  background-color: #fff;
+  border: 1.5px solid hsl(350, 79%, 72%);
+  color: hsl(350, 79%, 72%);
+}
+
+.view-github:hover {
+  background-color: hsl(350, 79%, 62%);
+}
+
+.view-live:hover {
+  border: 1.5px solid hsl(350, 79%, 60%);
+  color: hsl(350, 79%, 60%);
+}
+
+.btn-wrapper {
+  padding-top:40px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .view-repos {
+  font-size:16px;
   background-color: #fff ;
-  color: #F07D91;
-  padding: 10px 20px;
-  border:1px solid #F07D91;
-  margin-left: 40px;
-  border-radius: 8px;
+  color: hsl(350, 79%, 72%);
+  padding: 12px 28px;
+  border:1.5px solid hsl(350, 79%, 72%);
+  text-align: center;
 }
 
 .view-repos:hover,
 .view-repos:focus {
-  cursor:pointer;
-  opacity:0.8;
+  color: hsl(350, 79%, 60%);
+  border: 1.5px solid hsl(350, 79%, 60%);
 }

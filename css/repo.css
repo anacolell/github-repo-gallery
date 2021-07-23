@@ -1,0 +1,73 @@
+.repo-upper {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background: linear-gradient(169deg, rgba(221,209,249,1) 0%, rgba(255,255,255,1) 78%);
+  padding-bottom:40px;
+}
+
+.repo-display-details > p {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.repo-display-pic {
+  width:90%;
+  margin:20px;
+  border-radius: 20px;
+  border: 3px solid #fff;
+}
+
+.repo-display-name {
+  padding-top: 50px;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  font-family:'Stardos Stencil', cursive;
+  font-weight: bold;
+}
+
+.repo-display-details {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.repo-display-languages {
+  list-style-type: none;
+}
+
+.repo-display-languages li {
+  font-weight: bold;
+  display: inline-block;
+  padding:6px 10px;
+  background-color: #f7d9df;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.markdown {
+  padding:10px;
+}
+
+/* media queries */
+@media (min-width:700px) {
+  .repo-display-info {
+    margin: 50px 0;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .repo-display-name {
+    font-size: 40px;
+  }
+  .repo-display-pic {
+    width: 45%;
+  }
+  .repo-display-details {
+    width: 45%;
+  }
+  .markdown {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
