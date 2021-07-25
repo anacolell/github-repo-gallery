@@ -46,7 +46,19 @@
 }
 
 .markdown {
-  padding: 10px;
+  padding: 0px 20px;
+}
+
+.markdown h3 {
+  padding-top: 20px;
+}
+
+.markdown img {
+  padding: 30px 0;
+}
+
+.markdown>ul {
+  padding-left: 20px;
 }
 
 /* media queries */
