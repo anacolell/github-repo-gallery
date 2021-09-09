@@ -253,6 +253,7 @@ backBtn.addEventListener("click", (e) => {
   reposContainer.classList.remove("hide");
   repoInfo.classList.add("hide");
   backBtn.classList.add("hide");
+  backBtn2.classList.add("hide");
   filterInput.classList.remove("hide");
   header.classList.remove("hide");
 });
@@ -261,6 +262,7 @@ backBtn2.addEventListener("click", (e) => {
   reposContainer.classList.remove("hide");
   repoInfo.classList.add("hide");
   backBtn2.classList.add("hide");
+  backBtn.classList.add("hide");
   filterInput.classList.remove("hide");
   header.classList.remove("hide");
 });
