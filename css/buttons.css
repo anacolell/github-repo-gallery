@@ -12,7 +12,7 @@
   text-align: center;
   padding: 10px;
   margin-top: 10px;
-  border-radius:10px;
+  border-radius: 10px;
   font-weight: bold;
 }
 
@@ -45,25 +45,47 @@
 }
 
 .view-repos {
-  font-size: 16px;
-  background-color: #fff ;
+  top: 9%;
+  left: 7%;
+}
+
+.view-repos,
+.view-repos2 {
+  font-size: 12px;
+  background-color: #fff;
   color: hsl(350, 79%, 72%);
-  padding: 12px 28px;
+  padding: 8px 20px;
   border: 1.5px solid hsl(350, 79%, 72%);
-  text-align: center;
+}
+
+.view-repos {
+  position: absolute;
+  top: 9%;
+  left: 6%;
 }
 
 .view-repos:hover,
-.view-repos:focus {
+.view-repos2:hover,
+.view-repos:focus,
+.view-repos2:focus {
   color: hsl(350, 79%, 60%);
   border: 1.5px solid hsl(350, 79%, 60%);
 }
 
+.back-arrow {
+  margin-right: 3px;
+}
+
 /* media queries */
-/* media queries */
-@media (min-width:700px) {
+@media (min-width: 700px) {
   .btns {
     flex-direction: row;
     justify-content: center;
+  }
+
+  .view-repos,
+  .view-repos2 {
+    font-size: 14px;
+    padding: 10px 24px;
   }
 }
