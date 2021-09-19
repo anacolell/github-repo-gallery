@@ -232,13 +232,16 @@ const displayRepo = async (
         <ul class="repo-display-languages">${repoLanguages.join(" ")}</ul>
         <div class="btns">
           <a class="btn view-github" href="${repoUrl}" target="_blank" rel="noreferrer noopener">View Repo on GitHub</a>
-          <a class="btn view-live" href="${repoHomeUrl}" target="_blank" rel="noreferrer noopener">View live</a>
+          <a class="btn view-live ${
+            repoHomeUrl === null || repoHomeUrl === "" ? "hide" : ""
+          }" href="${repoHomeUrl}" target="_blank" rel="noreferrer noopener">View live</a>
         </div>
       </div>
     </div>
     </div>
     <div class="markdown">${markdown}</div>
   `;
+  console.log(repoHomeUrl);
   window.scrollTo(0, 0);
   repoInfo.append(repoDiv);
   reposContainer.classList.add("hide");
